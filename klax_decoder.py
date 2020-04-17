@@ -1,4 +1,3 @@
-import base64
 import math
 
 REGISTER_RAW = False
@@ -202,13 +201,7 @@ def get_decoder(decoders, port):
     return dict
 
 
-def make_bytes(input):
-    decoded = base64.b64decode(input)
-    return decoded
-
-
 def decode(port, bytes):
-    bytes = make_bytes(bytes)
     dict = get_decoder(decoders, port)
     if dict is None:
         return None
